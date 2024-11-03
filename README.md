@@ -5,6 +5,8 @@ They will be uploaded into the current working directory that it's ran.
 
 It's an easy way to trasnfer files without the need of SSH and compromising usernames.
 
+The webpage has buttons that can be used, however, below is a list of CLI commands to get the job done.
+
 # USAGE
 `python3 upload-server.py`
 
