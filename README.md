@@ -16,4 +16,4 @@ The webpage has buttons that can be used, however, below is a list of CLI comman
 	- `Invoke-RestMethod -Uri <PYTHON_SERVER_IP> -Method Post -Form <PATH_TO_YOUR_FILE>`
 
 - LINUX UPLOAD COMMAND
-	- `curl -X POST -F "file=@/path/to/your/file.txt" http://localhost`
+	- `curl -X POST -F "file=@/path/to/your/file.txt" http://<PYTHON_SERVER_IP>`
