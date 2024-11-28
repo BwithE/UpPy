@@ -13,7 +13,7 @@ The webpage has buttons that can be used, however, below is a list of CLI comman
 
 # CLIENT USAGE
 - WINDOWS POWERSHELL UPLOAD COMMAND
-	- `Invoke-RestMethod -Uri <PYTHON_SERVER_IP> -Method Post -Form <PATH_TO_YOUR_FILE>`
+	- `Invoke-WebRequest -Uri http://<PYTHON_SERVER_IP> -Method Post -InFile "C:\path\to\your\file.txt" -ContentType "multipart/form-data"
 
 - LINUX UPLOAD COMMAND
 	- `curl -X POST -F "file=@/path/to/your/file.txt" http://<PYTHON_SERVER_IP>`
