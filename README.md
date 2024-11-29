@@ -1,4 +1,6 @@
 # http-upload
+![image](https://github.com/user-attachments/assets/c5386554-5fb1-4d26-89cc-b646dc03f754)
+
 
 A Python HTTP server that runs on port 80 and receives files from remote machines.
 
