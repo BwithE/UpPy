@@ -17,8 +17,18 @@ class UploadHandler(http.server.SimpleHTTPRequestHandler):
             if b'filename=' in part:
                 # extract the filename
                 filename = part.split(b'filename=')[1].split(b'\r\n')[0].strip(b'"').decode('utf-8')
-                file_content = part.split(b'\r\n\r\n')[1].split(b'\r\n')[0]
                 
+                # file content starts after the first \r\n\r\n sequence
+                # everything after the first \r\n\r\n and before the next \r\n boundary is the file content
+                try:
+                    file_content = part.split(b'\r\n\r\n')[1]  # This skips the headers part
+                except IndexError:
+                    continue  # Skip empty parts or malformed data
+                
+                # Remove any trailing boundary markers
+                if file_content.endswith(b'--'):
+                    file_content = file_content[:-2]
+
                 # save the file to the current directory
                 with open(os.path.join(os.getcwd(), filename), 'wb') as f:
                     f.write(file_content)
