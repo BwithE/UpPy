@@ -10,7 +10,7 @@ It's an easy way to trasfer files without the need of SSH and compromising usern
 
 The webpage has buttons that can be used, however, below is a list of CLI commands to get the job done.
 
-Windows clients need `curl.exe` for CLI commands which can be found at "https://curl.se/windows/".
+Windows clients need `curl.exe` for CLI commands which can be found at https://curl.se/windows/.
 
 # USAGE
 `python3 upload-server.py`
