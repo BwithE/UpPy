@@ -44,6 +44,7 @@ class UploadHandler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(b'''
             <html>
+            <title>UpPy</title>
                 <head>
                     <style>
                         body {
