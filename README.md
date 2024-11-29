@@ -1,4 +1,4 @@
-# http-upload
+# UpPy
 ![image](https://github.com/user-attachments/assets/c5386554-5fb1-4d26-89cc-b646dc03f754)
 
 
