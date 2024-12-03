@@ -1,4 +1,6 @@
 # UpPy
+
+
 ![image](https://github.com/user-attachments/assets/c5386554-5fb1-4d26-89cc-b646dc03f754)
 
 
@@ -13,7 +15,7 @@ The webpage has buttons that can be used, however, below is a list of CLI comman
 Windows clients need `curl.exe` for CLI commands which can be found at https://curl.se/windows/.
 
 # USAGE
-`python3 upload-server.py`
+`python3 up.py`
 
 
 # CLIENT USAGE
