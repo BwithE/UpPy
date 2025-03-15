@@ -21,7 +21,7 @@ python3 up.py
 
 
 # CLIENT USAGE
-- WINDOWS POWERSHELL UPLOAD COMMAND
+- WINDOWS UPLOAD COMMAND
 ```
 curl -X POST -F "file=@c:\path\to\your\file.txt" http://<PYTHON_SERVER_IP>
 ```
