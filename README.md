@@ -26,7 +26,7 @@ python3 up.py
 curl -X POST -F "file=@c:\path\to\your\file.txt" http://<PYTHON_SERVER_IP>
 ```
 
-- LINUX UPLOAD COMMAND
+- LINUX & MAC UPLOAD COMMAND
 ```
 curl -X POST -F "file=@/path/to/your/file.txt" http://<PYTHON_SERVER_IP>
 ```
