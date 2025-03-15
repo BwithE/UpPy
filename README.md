@@ -15,12 +15,18 @@ The webpage has buttons that can be used, however, below is a list of CLI comman
 Windows clients need `curl.exe` for CLI commands which can be found at https://curl.se/windows/.
 
 # USAGE
-`python3 up.py`
+```
+python3 up.py
+```
 
 
 # CLIENT USAGE
 - WINDOWS POWERSHELL UPLOAD COMMAND
-	- `curl -X POST -F "file=@c:\path\to\your\file.txt" http://<PYTHON_SERVER_IP>`
+```
+curl -X POST -F "file=@c:\path\to\your\file.txt" http://<PYTHON_SERVER_IP>
+```
 
 - LINUX UPLOAD COMMAND
-	- `curl -X POST -F "file=@/path/to/your/file.txt" http://<PYTHON_SERVER_IP>`
+```
+curl -X POST -F "file=@/path/to/your/file.txt" http://<PYTHON_SERVER_IP>
+```
