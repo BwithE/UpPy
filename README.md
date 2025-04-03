@@ -8,7 +8,7 @@ A Python HTTP server that runs on port 80 and receives files from remote machine
 
 They will be uploaded into the current working directory that it's ran.
 
-It's an easy way to trasfer files without the need of SSH and compromising usernames.
+It's an easy way to trasfer files.
 
 The webpage has buttons that can be used, however, below is a list of CLI commands to get the job done.
 
