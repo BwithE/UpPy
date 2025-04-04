@@ -26,7 +26,10 @@ python3 up.py
 - WINDOWS UPLOAD COMMAND
 ```
 curl -X POST -F "file=@c:\path\to\your\file.txt" http://<PYTHON_SERVER_IP>
+
+Invoke-WebRequest -Uri "http://<PYTHON_SERVER_IP>" -Method Post -Form @{file=Get-Item "C:\path\to\your\file.txt"}
 ```
+
 
 - LINUX & MAC UPLOAD COMMAND
 ```
