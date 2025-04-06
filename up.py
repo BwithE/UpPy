@@ -49,72 +49,76 @@ class UploadHandler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(b'File uploaded successfully!')
 
     def do_GET(self):
-        # host the upload form with a darker theme and purple button
-        self.send_response(200)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        self.wfile.write(b'''
-            <html>
-            <title>UpPy</title>
-                <head>
-                    <style>
-                        body {
-                            font-family: Arial, sans-serif;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            height: 100vh;
-                            margin: 0;
-                            background-color: #2c2f38;  /* Dark background */
-                            color: #e0e0e0;  /* Light text color */
-                        }
-                        .container {
-                            padding: 30px;
-                            border-radius: 8px;
-                            background-color: #3a3f47;  /* Darker background for the box */
-                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                            text-align: center;
-                            width: 100%;
-                            max-width: 400px;
-                        }
-                        h1 {
-                            color: #f1f1f1;  /* Light text color for the heading */
-                            margin-bottom: 20px;
-                        }
-                        input[type="file"] {
-                            margin-bottom: 20px;
-                            padding: 10px;
-                            border-radius: 5px;
-                            border: 1px solid #555;
-                            background-color: #555;
-                            color: #fff;
-                        }
-                        input[type="submit"] {
-                            padding: 10px 20px;
-                            border: none;
-                            background-color: #8e44ad;  /* Purple button */
-                            color: white;
-                            font-size: 16px;
-                            cursor: pointer;
-                            border-radius: 5px;
-                        }
-                        input[type="submit"]:hover {
-                            background-color: #9b59b6;  /* Lighter purple on hover */
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="container">
-                        <h1>Upload Your File</h1>
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <input type="file" name="file" />
-                            <br>
-                            <input type="submit" value="Upload" />
-                        </form>
-                    </div>
-                </body>
-            </html>
-        ''')
+        if self.path == "/":
+            # host the upload form with a darker theme and purple button
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(b'''
+                <html>
+                <title>UpPy</title>
+                    <head>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100vh;
+                                margin: 0;
+                                background-color: #2c2f38;  /* Dark background */
+                                color: #e0e0e0;  /* Light text color */
+                            }
+                            .container {
+                                padding: 30px;
+                                border-radius: 8px;
+                                background-color: #3a3f47;  /* Darker background for the box */
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                                text-align: center;
+                                width: 100%;
+                                max-width: 400px;
+                            }
+                            h1 {
+                                color: #f1f1f1;  /* Light text color for the heading */
+                                margin-bottom: 20px;
+                            }
+                            input[type="file"] {
+                                margin-bottom: 20px;
+                                padding: 10px;
+                                border-radius: 5px;
+                                border: 1px solid #555;
+                                background-color: #555;
+                                color: #fff;
+                            }
+                            input[type="submit"] {
+                                padding: 10px 20px;
+                                border: none;
+                                background-color: #8e44ad;  /* Purple button */
+                                color: white;
+                                font-size: 16px;
+                                cursor: pointer;
+                                border-radius: 5px;
+                            }
+                            input[type="submit"]:hover {
+                                background-color: #9b59b6;  /* Lighter purple on hover */
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <h1>Upload Your File</h1>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <input type="file" name="file" />
+                                <br>
+                                <input type="submit" value="Upload" />
+                            </form>
+                        </div>
+                    </body>
+                </html>
+            ''')
+        else:
+            # Serve the file if it exists
+            return http.server.SimpleHTTPRequestHandler.do_GET(self)
 
 class ThreadingHTTPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
@@ -130,5 +134,5 @@ def create_server():
     return server
 
 server = create_server()
-print(f"{ORANGE}[*] HTTP server on port 80")
+print(f"{ORANGE}[*] HTTP server on port 80{RESET}")
 server.serve_forever()
