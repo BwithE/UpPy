@@ -3,6 +3,17 @@ import http.server
 import socketserver
 import os
 
+# ANSI escape codes for colors
+RED = "\033[91m"
+GREEN = "\033[92m"
+BLUE = "\033[94m"
+ORANGE = "\033[38;5;214m"
+PINK = "\033[95m"
+PURPLE = "\033[35m"
+YELLOW = "\033[93m"
+BROWN = "\033[33m"
+RESET = "\033[0m"  # Reset color back to default
+
 class UploadHandler(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):
         # handles file upload
@@ -119,5 +130,5 @@ def create_server():
     return server
 
 server = create_server()
-print(f"Serving on port 80")
+print(f"{ORANGE}[*] HTTP server on port 80")
 server.serve_forever()
